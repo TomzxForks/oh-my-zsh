@@ -1,5 +1,8 @@
+# Aliases
+alias k=kubectl
 alias kde=eval $(minikube docker-env)
 
+# Functions
 kpush()
 {
 	NAMESPACE=$1
