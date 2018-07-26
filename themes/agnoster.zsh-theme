@@ -199,6 +199,15 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_kubernetes() {
+	local kubernetes_context=`kubectl config current-context`
+	if [[ "$kubernetes_context" != "minikube" ]]; then
+		prompt_segment green black "☸️  $kubernetes_context"
+	fi
+	# prompt_segment yellow black "HELLO"
+	# TODO
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -223,6 +232,7 @@ build_prompt() {
   prompt_git
   prompt_bzr
   prompt_hg
+  prompt_kubernetes
   prompt_end
 }
 
