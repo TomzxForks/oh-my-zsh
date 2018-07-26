@@ -1,19 +1,10 @@
 # Aliases
-alias k=kubectl
-alias kde=eval $(minikube docker-env)
+alias k="kubectl"
+alias kde="eval $(minikube docker-env)"
+alias kpush="kubectl config use-context"
+alias kpop="kubectl config use-context minikube"
 
 # Functions
-kpush()
-{
-	NAMESPACE=$1
-	kubectl config use-context $NAMESPACE
-}
-
-kpop()
-{
-	kubectl config use-context minikube
-}
-
 inspect_volume()
 {
 	VOLUME=$1
